@@ -23,6 +23,30 @@
       "name": "Release app",
       "program": "${workspaceFolder:swift-webapp-playground}/.build/release/app",
       "preLaunchTask": "swift: Build Release app"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:swift-webapp-playground}",
+      "name": "Debug App",
+      "program": "${workspaceFolder:swift-webapp-playground}/.build/debug/App",
+      "preLaunchTask": "swift: Build Debug App"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:swift-webapp-playground}",
+      "name": "Release App",
+      "program": "${workspaceFolder:swift-webapp-playground}/.build/release/App",
+      "preLaunchTask": "swift: Build Release App"
     }
   ]
 }

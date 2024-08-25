@@ -1,14 +1,14 @@
 import Hummingbird
 
 let router = Router()
+var handler = AppHandler()
 
-router.get("hello") { request, _ -> String in
-    return "Hello"
-}
-// create application using router
+router.get("/cities/:cityName", use: handler.getCity)
+router.post("/cities", use: handler.postCity)
+
 let app = Application(
     router: router,
     configuration: .init(address: .hostname("0.0.0.0", port: 8080))
 )
-// run hummingbird application
+
 try await app.runService()

@@ -5,7 +5,7 @@ RUN \
   --mount=type=cache,target=/var/cache/apt,sharing=locked \
   apt-get update \
   && apt-get upgrade -y \
-  && apt-get install -y sudo
+  && apt-get install -y sudo curl git
 
 ARG USERNAME=user
 ARG GROUPNAME=user
