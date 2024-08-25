@@ -24,7 +24,7 @@ actor Handler {
         }
 
         init(row: MySQLRow) throws {
-            guard let cityID = row.column("id")?.int else {
+            guard let cityID = row.column("ID")?.int else {
                 throw HTTPError(.internalServerError, message: "City ID not found")
             }
 
