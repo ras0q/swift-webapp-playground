@@ -31,9 +31,9 @@
         "swift"
       ],
       "args": [],
-      "cwd": "${workspaceFolder:swift-webapp-playground}",
+      "cwd": "${workspaceFolder:workspaces}",
       "name": "Debug App",
-      "program": "${workspaceFolder:swift-webapp-playground}/.build/debug/App",
+      "program": "${workspaceFolder:workspaces}/.build/debug/App",
       "preLaunchTask": "swift: Build Debug App"
     },
     {
@@ -43,9 +43,9 @@
         "swift"
       ],
       "args": [],
-      "cwd": "${workspaceFolder:swift-webapp-playground}",
+      "cwd": "${workspaceFolder:workspaces}",
       "name": "Release App",
-      "program": "${workspaceFolder:swift-webapp-playground}/.build/release/App",
+      "program": "${workspaceFolder:workspaces}/.build/release/App",
       "preLaunchTask": "swift: Build Release App"
     }
   ]

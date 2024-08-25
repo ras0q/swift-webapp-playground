@@ -6,11 +6,13 @@ import PackageDescription
 let package = Package(
     name: "App",
     dependencies: [
-        .package(url: "https://github.com/hummingbird-project/hummingbird", from: "2.0.0-rc.4")
+        .package(url: "https://github.com/hummingbird-project/hummingbird", from: "2.0.0-rc.4"),
+        .package(url: "https://github.com/vapor/mysql-kit.git", from: "4.0.0")
     ],
     targets: [
         .executableTarget(name: "App", dependencies: [
-            .product(name: "Hummingbird", package: "hummingbird")
+            .product(name: "Hummingbird", package: "hummingbird"),
+            .product(name: "MySQLKit", package: "mysql-kit")
         ])
     ]
 )
