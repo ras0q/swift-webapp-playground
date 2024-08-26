@@ -27,6 +27,8 @@ let database = mysqlPool.database(logger: logger)
 let router = Router()
 var handler = Handler(database: database)
 
+router.add(middleware: CORSMiddleware(allowOrigin: .all))
+
 router.get("/cities/:cityName", use: handler.getCity)
 router.post("/cities", use: handler.postCity)
 

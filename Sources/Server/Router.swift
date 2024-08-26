@@ -1,3 +1,4 @@
+import Foundation
 import Hummingbird
 import MySQLKit
 import Schema
@@ -10,7 +11,7 @@ actor Handler {
     }
 
     @Sendable
-    func getCity(request: Request, context: BasicRequestContext) async throws -> City {
+    func getCity(request: Request, context: BasicRequestContext) async throws -> some ResponseGenerator {
         guard let cityName = context.parameters.get("cityName") else {
             throw HTTPError(.badRequest, message: "City name not provided")
         }
@@ -24,7 +25,7 @@ actor Handler {
             throw HTTPError(.internalServerError, message: "Failed to decode city")
         }
 
-        return city
+        return Response(status: .ok, from: city)
     }
 
     struct PostCityRequest: Decodable {
@@ -35,7 +36,7 @@ actor Handler {
     }
 
     @Sendable
-    func postCity(request: Request, context: BasicRequestContext) async throws -> City {
+    func postCity(request: Request, context: BasicRequestContext) async throws -> some ResponseGenerator {
         let cityRequest = try await request.decode(as: City.self, context: context)
 
         let query = database.query("INSERT INTO city (Name, CountryCode, District, Population) VALUES (?, ?, ?, ?)", [
@@ -52,6 +53,13 @@ actor Handler {
             throw HTTPError(.internalServerError, message: "Failed to decode city")
         }
 
-        return city
+        return Response(status: .ok, from: city)
+    }
+}
+
+extension Response {
+    init(status: HTTPTypes.HTTPResponse.Status, headers: HTTPFields = .init(), from value: some Encodable) {
+        let json = try! JSONEncoder().encode(value)
+        self.init(status: status, headers: headers, body: ResponseBody(byteBuffer: ByteBuffer(bytes: json)))
     }
 }
