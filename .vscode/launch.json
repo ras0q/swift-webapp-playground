@@ -7,30 +7,6 @@
         "swift"
       ],
       "args": [],
-      "cwd": "${workspaceFolder:swift-webapp-playground}",
-      "name": "Debug app",
-      "program": "${workspaceFolder:swift-webapp-playground}/.build/debug/app",
-      "preLaunchTask": "swift: Build Debug app"
-    },
-    {
-      "type": "lldb",
-      "request": "launch",
-      "sourceLanguages": [
-        "swift"
-      ],
-      "args": [],
-      "cwd": "${workspaceFolder:swift-webapp-playground}",
-      "name": "Release app",
-      "program": "${workspaceFolder:swift-webapp-playground}/.build/release/app",
-      "preLaunchTask": "swift: Build Release app"
-    },
-    {
-      "type": "lldb",
-      "request": "launch",
-      "sourceLanguages": [
-        "swift"
-      ],
-      "args": [],
       "cwd": "${workspaceFolder:workspaces}",
       "name": "Debug App",
       "program": "${workspaceFolder:workspaces}/.build/debug/App",
@@ -47,6 +23,30 @@
       "name": "Release App",
       "program": "${workspaceFolder:workspaces}/.build/release/App",
       "preLaunchTask": "swift: Build Release App"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:workspaces}",
+      "name": "Debug Client",
+      "program": "${workspaceFolder:workspaces}/.build/debug/Client",
+      "preLaunchTask": "swift: Build Debug Client"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:workspaces}",
+      "name": "Release Client",
+      "program": "${workspaceFolder:workspaces}/.build/release/Client",
+      "preLaunchTask": "swift: Build Release Client"
     }
   ]
 }

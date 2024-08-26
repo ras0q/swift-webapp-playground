@@ -5,7 +5,8 @@ RUN \
   --mount=type=cache,target=/var/cache/apt,sharing=locked \
   apt-get update \
   && apt-get upgrade -y \
-  && apt-get install -y sudo curl git
+  && apt-get install -y sudo curl git \
+    libgtk+-3.0 gtk+-3.0 clang # for Tokamak
 
 ARG USERNAME=user
 ARG GROUPNAME=user
