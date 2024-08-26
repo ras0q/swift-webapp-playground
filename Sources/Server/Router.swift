@@ -20,7 +20,11 @@ actor Handler {
             throw HTTPError(.notFound, message: "City not found")
         }
 
-        return try City(row: row)
+        guard let city = City(row: row) else {
+            throw HTTPError(.internalServerError, message: "Failed to decode city")
+        }
+
+        return city
     }
 
     struct PostCityRequest: Decodable {
@@ -44,6 +48,10 @@ actor Handler {
             throw HTTPError(.internalServerError, message: "Failed to insert city")
         }
 
-        return try City(row: row)
+        guard let city = City(row: row) else {
+            throw HTTPError(.internalServerError, message: "Failed to decode city")
+        }
+
+        return city
     }
 }

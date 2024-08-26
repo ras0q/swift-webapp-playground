@@ -16,10 +16,7 @@ let package = Package(
             .target(name: "Schema"),
             .product(name: "TokamakShim", package: "Tokamak")
         ]),
-        .target(name: "Schema", dependencies: [
-            .product(name: "Hummingbird", package: "hummingbird"),
-            .product(name: "MySQLKit", package: "mysql-kit")
-        ]),
+        .target(name: "Schema", dependencies: []),
         .executableTarget(name: "Server", dependencies: [
             .target(name: "Schema"),
             .product(name: "Hummingbird", package: "hummingbird"),

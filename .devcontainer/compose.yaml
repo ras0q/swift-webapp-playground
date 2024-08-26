@@ -15,7 +15,6 @@ services:
       - "8080:8080"
     volumes:
       - ..:/workspaces:cached
-      - ~/.cache/org.swift.swiftpm:~/.cache/org.swift.swiftpm:cached
     working_dir: /workspaces
     command: sleep infinity
 
