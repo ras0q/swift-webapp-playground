@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "carton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftwasm/carton",
+      "state" : {
+        "revision" : "d3f1da61faa05283e46a05698ac9bea46fd1035f",
+        "version" : "1.1.2"
+      }
+    },
+    {
       "identity" : "hummingbird",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hummingbird-project/hummingbird",
@@ -268,6 +277,15 @@
       "state" : {
         "revision" : "f1cbfcf073e2675566b0e9aa337441357d40d88a",
         "version" : "0.11.1"
+      }
+    },
+    {
+      "identity" : "wasmtransformer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftwasm/WasmTransformer",
+      "state" : {
+        "revision" : "d04b31f61b6f528a9a96ebfe4fa4275e333eba82",
+        "version" : "0.5.0"
       }
     }
   ],

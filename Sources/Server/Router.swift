@@ -1,39 +1,12 @@
 import Hummingbird
 import MySQLKit
+import Schema
 
 actor Handler {
     let database: MySQLDatabase
 
     init(database: MySQLDatabase) {
         self.database = database
-    }
-
-    struct City: ResponseCodable {
-        let id: Int
-        let name: String?
-        let countryCode: String?
-        let district: String?
-        let population: String?
-
-        init(id: Int = 0, name: String? = nil, countryCode: String? = nil, district: String? = nil, population: String? = nil) {
-            self.id = id
-            self.name = name
-            self.countryCode = countryCode
-            self.district = district
-            self.population = population
-        }
-
-        init(row: MySQLRow) throws {
-            guard let cityID = row.column("ID")?.int else {
-                throw HTTPError(.internalServerError, message: "City ID not found")
-            }
-
-            self.id = cityID
-            self.name = row.column("Name")?.string
-            self.countryCode = row.column("CountryCode")?.string
-            self.district = row.column("District")?.string
-            self.population = row.column("Population")?.string
-        }
     }
 
     @Sendable
