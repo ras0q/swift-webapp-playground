@@ -1,10 +1,10 @@
 services:
-  app:
+  development:
     depends_on:
       mysql:
         condition: service_healthy
     build:
-      context: ./app
+      context: ./development
       dockerfile: Dockerfile
     environment:
       MYSQL_HOST: mysql
@@ -15,6 +15,7 @@ services:
       - "8080:8080"
     volumes:
       - ..:/workspaces:cached
+      - ~/.cache/org.swift.swiftpm:~/.cache/org.swift.swiftpm:cached
     working_dir: /workspaces
     command: sleep infinity
 

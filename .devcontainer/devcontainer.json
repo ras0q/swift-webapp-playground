@@ -3,7 +3,7 @@
 {
 	"name": "Swift Development",
 	"dockerComposeFile": "./compose.yaml",
-	"service": "app",
+	"service": "development",
 	"workspaceFolder": "/workspaces",
 	"features": {
 		// "ghcr.io/swift-server-community/swift-devcontainer-features/SwiftFormat:0": {}

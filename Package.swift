@@ -4,19 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "App",
+    name: "SwiftWebAppPlayground",
     dependencies: [
         .package(url: "https://github.com/hummingbird-project/hummingbird", from: "2.0.0-rc.4"),
         .package(url: "https://github.com/TokamakUI/Tokamak", from: "0.11.0"),
         .package(url: "https://github.com/vapor/mysql-kit.git", from: "4.0.0"),
     ],
     targets: [
-        .executableTarget(name: "App", dependencies: [
-            .product(name: "Hummingbird", package: "hummingbird"),
-            .product(name: "MySQLKit", package: "mysql-kit")
-        ]),
         .executableTarget(name: "Client", dependencies: [
             .product(name: "TokamakShim", package: "Tokamak")
+        ]),
+        .executableTarget(name: "Server", dependencies: [
+            .product(name: "Hummingbird", package: "hummingbird"),
+            .product(name: "MySQLKit", package: "mysql-kit")
         ])
     ]
 )
