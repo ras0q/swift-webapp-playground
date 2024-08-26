@@ -6,7 +6,7 @@ RUN \
   apt-get update \
   && apt-get upgrade -y \
   && apt-get install -y sudo curl git \
-    libgtk+-3.0 gtk+-3.0 clang # for Tokamak
+    libgtk+-3.0 gtk+-3.0 clang binaryen # for SwiftWasm
 
 ARG USERNAME=user
 ARG GROUPNAME=user
